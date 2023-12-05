@@ -1,0 +1,243 @@
+:root{
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --gradientA: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --gradientB: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+*{
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    min-width: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--gradientA);
+}
+
+h1{
+    font-weight: 300;
+    font-size: 2.5em;
+    color: var(--Desaturated-Red);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    max-width: 335px;
+}
+
+h1 span{
+    font-weight: 600;
+    color: var(--Dark-Grayish-Red);
+    font-size: 1em;
+}
+
+p{
+    font-weight: 400;
+    color: var(--Desaturated-Red);
+    max-width: 305px;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.main-article__div-text-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+    flex-grow: 1;
+    display: grid;
+    max-width: 375px;
+    position: relative;
+    z-index: 1;
+}
+
+.main__div-photo-container{
+    display: flex;
+    justify-content: center;
+    min-height: 250px;
+    min-width: 310px;
+    background-image: url(images/hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.main__div-logo-container{
+    position: relative;
+    height: 80px;
+}
+
+.main__div-logo-container img
+{
+    position: absolute;
+    left: 31px;
+    top: 28px;
+    width: 100px;
+}
+
+article{
+    grid-row: 3 / 4;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    padding-top: 37px;
+    padding-bottom: 50px;
+    
+}
+
+#form__input-and-button-container{
+    border: 1px solid;
+    border-color: var(--Desaturated-Red);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border-radius: 25px;
+    position: relative;
+}
+
+form input, form button{
+    height: 100%;
+}
+
+form input{
+    border: none;
+    width: 80%;
+    background-color: transparent;
+    padding-left: 20px;
+    outline: none;
+}
+
+form button{
+    border: none;
+    background: var(--gradientB);
+    cursor: pointer;
+    width: 20%;
+    border-radius: 23px;
+    display: grid;
+    place-items: center;
+    height: 105%;
+    box-shadow: 0px 10px 17px 3px rgba(237,140,140,0.36);
+    outline: 2px solid var(--Desaturated-Red);
+    transition: all 0.3s;
+}
+
+form button:hover{
+    filter: brightness(1.2);
+    height: 115%;
+    width: 30%;
+    border-radius: 26px;
+    box-shadow: 0px 10px 17px 3px rgba(237,140,140,0.6);
+}
+
+#error-icon{
+    position: absolute;
+    right: 25%;
+    display: none;
+}
+
+#input-validation-message
+{
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 55px;
+}
+
+footer{
+    position: static;
+}
+
+@media only screen and (min-width: 1000px)
+{
+    body{
+        align-items: normal;
+    }
+
+    main{
+        max-width: 100%;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+
+    .main__div-logo-container{
+        height: 66px;
+    }
+
+    article{
+        grid-row: 2 / 4;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        padding-left: 153px;
+    }
+
+    .main__div-photo-container{
+        background-image: url(images/hero-desktop.jpg);
+        background-size: cover;
+        max-height: 100%;
+        grid-row: 1 / 4;
+        max-width: 100%;
+    }
+
+    .main__div-logo-container img {
+        left: 153px;
+        top: auto;
+        width: 150px;
+        bottom: 0;
+    }
+
+    .main-article__div-text-container{
+        text-align: start;
+        align-items: flex-start;
+    }
+
+    h1{
+        font-size: 4em;
+        padding-top: 60px;
+        padding-bottom: 0;
+    }
+
+    p{
+        font-size: 1em;
+        max-width: 430px;
+    }
+
+    #form__input-and-button-container{
+        width: 420px;
+    }
+
+    .div__footer-container{
+        position: absolute;
+        height: 555px;
+        right: 0;
+        width: 546px;
+    }
+
+    footer{
+        position: absolute;
+        width: 300px;
+        top: 530px;
+        left: -300px;
+        z-index: 2;
+    }
+}
+
+@media only screen and (min-height: 619px){
+    footer {
+        top: 595px;
+    }
+}
